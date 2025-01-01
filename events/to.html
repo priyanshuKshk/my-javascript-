@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    <h1>async functions</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+
+   
+<script>
+     // setTimeout(() => {
+    //     console.log("hi");
+        
+    // }, 2000);
+    // setInterval(() => {
+    //     console.log("priya");
+        
+    // }, 2000);
+    // const changeText = function () {
+    //     document.querySelector('h1').innerHTML = "my javascriipt file"
+    // }
+    // const chnageMe =setTimeout(changeText ,2000)
+    // clearTimeout()// want reference
+    // document.querySelector('#stop').addEventListener('click' ,function () {
+    //     clearTimeout(chnageMe)
+    //     console.log("STOPPED");
+        
+    // })
+//     const sayDate = setInterval(function () {
+//         console.log("priya" , Date.now());
+        
+//     } , 2000)
+// //const intervalId = setInterval( , 1000)
+// document.querySelector('#start').addEventListener('click' , function () {
+//     clearInterval(sayDate )
+//     console.log("stopped");
+    
+
+// })
+    //generate a randomcolor
+    const randomColor = function () {
+        const hex = "0123456789ABCDEF"
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+           color+= hex[Math.floor(Math.random()*16)]
+        }
+        return color;
+    };
+    let intervalId;
+   const startChangingColor  = function () {
+    if (!intervalId) {
+        intervalId = setInterval(changeColor, 1000)
+    }
+   
+   function changeColor() {
+    document.body.style.backgroundColor = randomColor();
+   }
+  
+   }
+   const stopChangingColor  = function () {
+            clearInterval(intervalId )
+            intervalId =null;
+   } 
+   
+const backGroundChanger = document.querySelector('#start').addEventListener('click' ,startChangingColor )
+    
+const backGroundstopper = document.querySelector('#stop').addEventListener('click' ,stopChangingColor )
+    
+   
+
+</script>
+
+</html>
